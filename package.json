@@ -1,4 +1,25 @@
 {
   "name": "kafka-book",
-  "packageManager": "yarn@4.11.0"
+  "packageManager": "yarn@4.11.0",
+  "dependencies": {
+    "@kafkajs/confluent-schema-registry": "^4.0.8",
+    "dotenv": "^17.4.2",
+    "kafkajs": "^2.2.4"
+  },
+  "devDependencies": {
+    "@types/node": "^25.6.0",
+    "tsx": "^4.21.0",
+    "typescript": "^6.0.3"
+  },
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "topic:create": "tsx src/admin/create-topic.ts",
+    "topic:list": "tsx src/admin/list-topics.ts",
+    "admin:client": "tsx src/admin/admin-client.ts",
+    "produce": "tsx src/producer/basic-producer.ts",
+    "consume": "tsx src/consumer/basic-consumer.ts",
+    "exp:01": "tsx src/experiments/01-topic-and-message.ts",
+    "exp:02": "tsx src/experiments/02-keys-and-partitions.ts"
+  }
 }
