@@ -16,6 +16,11 @@
   "scripts": {
     "topic:create": "tsx src/admin/create-topic.ts",
     "topic:list": "tsx src/admin/list-topics.ts",
+    "replication": "tsx src/replication/basic-replication.ts",
+    "partitions": "kafka-topics --bootstrap-server localhost:9092 --describe partitions",
+    "underreplicated": "kafka-topics --bootstrap-server localhost:9092 --describe underreplicated-partitions",
+    "produce:msg": "kafka-console-producer --bootstrap-server localhost:9092 --topic oreilly-test",
+    "consume:msg": "kafka-console-consumer --bootstrap-server localhost:9092 --topic oreilly-test --from-beginning",
     "admin:client": "tsx src/admin/admin-client.ts",
     "produce": "tsx src/producer/basic-producer.ts",
     "consume": "tsx src/consumer/basic-consumer.ts",
