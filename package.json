@@ -3,6 +3,7 @@
   "packageManager": "yarn@4.11.0",
   "dependencies": {
     "@kafkajs/confluent-schema-registry": "^4.0.8",
+    "concurrently": "^10.0.3",
     "dotenv": "^17.4.2",
     "kafkajs": "^2.2.4"
   },
@@ -22,6 +23,11 @@
     "produce:msg": "kafka-console-producer --bootstrap-server localhost:9092 --topic oreilly-test",
     "consume:msg": "kafka-console-consumer --bootstrap-server localhost:9092 --topic oreilly-test --from-beginning",
     "admin:client": "tsx src/admin/admin-client.ts",
+    "wordcount:start": "tsx src/streams/word-count.ts",
+    "wordcount:producer": "kafka-console-producer --bootstrap-server localhost:9092 --topic word-count-input",
+    "stock:stats": "tsx src/streams/stock-stats.ts",
+    "stock:producer": "tsx src/streams/stock-stats-producer.ts",
+    "stock:consume": "tsx src/streams/stock-stats-consumer.ts",
     "produce": "tsx src/producer/basic-producer.ts",
     "consume": "tsx src/consumer/basic-consumer.ts",
     "exp:01": "tsx src/experiments/01-topic-and-message.ts",
